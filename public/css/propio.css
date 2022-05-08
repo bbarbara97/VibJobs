@@ -1,0 +1,161 @@
+::placeholder {
+    color: rgba(0, 0, 0, 0.616);
+}
+
+.connect {
+    background-color: #f59323bf;
+    border-radius: 100px;
+    margin: 40px 150px;
+    padding: 50px;
+}
+
+body {
+    background-color: rgb(255 240 206);
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.oferta {
+    background-color: #f59323bf;
+    border-radius: 20px;
+    margin: 100px 20px 20px;
+    padding: 10px 50px 100px 50px;
+}
+
+h4.bl {
+    color: white;
+}
+
+.nn {
+    margin: 50px 20px;
+    padding: 10px 50px 100px 50px;
+}
+
+.navbar,
+.card,
+.foot {
+    background-color: rgb(245, 147, 35)!important;
+}
+
+.disabled {
+    color: #9b6527a6!important;
+}
+
+li a:hover {
+    background-color: #dc821b;
+}
+
+#non {
+    color: #995609;
+}
+
+.bg-cc {
+    background-color: #fff8e8;
+}
+
+#non:hover {
+    background-color: transparent;
+    color: #653906;
+}
+
+.navbar {
+    height: 63px;
+}
+
+body.init {
+    padding: 40px 0 0 0;
+}
+
+.rgb {
+    background-color: rgb(211 124 26) !important;
+    border-color: rgb(187 114 31) !important;
+    box-shadow: 2px -2px 5px rgb(0 0 0 / 40%);
+    color: white !important;
+}
+
+.btn {
+    background-color: #6ebd04 !important;
+    border-color: #69ad0d !important;
+}
+
+#derecha {
+    flex: 30% !important;
+}
+
+.rgb2 {
+    background-color: rgb(255 240 206)!important;
+}
+
+.mensaje {
+    height: 500px!important;
+}
+
+.pinch {
+    text-decoration: none;
+}
+
+.punch:hover {
+    color: #653906 !important;
+}
+
+.abs {
+    position: absolute;
+    top: 32%;
+    left: 70%;
+}
+
+.abs2 {
+    position: absolute;
+    top: 190px;
+    right: 123px;
+}
+
+.w-48 {
+    width: 48%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.ml-10 {
+    margin-left: 10%!important;
+}
+
+#row:hover {
+    background-color: #dc821b;
+}
+
+#row:hover #editar {
+    display: block;
+}
+
+#editar {
+    margin-top: -6px;
+    padding-top: 0px;
+    padding-bottom: 1px;
+    display: none;
+}
+
+#r2:hover #add {
+    display: block;
+}
+
+#add {
+    margin-top: 3px;
+    display: none;
+}
+
+#edit {
+    margin-top: 20px;
+    display: none;
+}
+
+#row:hover #edit {
+    display: block;
+}
+
+
+/* Posicion absolute */
+
+
+/* Color del botón: #6ebd04 */
