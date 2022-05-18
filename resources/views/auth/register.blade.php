@@ -155,7 +155,7 @@
                         </optgroup>
                     </select>
                     <br>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn2 btn-primary">
                         {{ __('Registrate!') }}
                     </button>
                     <span style="padding-top: 10px; visibility: hidden;">¿Todavía no te has registrado? ¡Registrate!</span>

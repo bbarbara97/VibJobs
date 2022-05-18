@@ -14,8 +14,7 @@
 
 <datalist id="locationsL"></datalist>
             <p>Nuevo código postal:</p> <input type="text" name="cp" id="cp" class="w-75"> <br> <br>
-            <p>Nuevo país:</p> <input type="text" name="country" id="country" class="w-75"> <br> <br>
-            <input type="submit" value="Guardar" class="btn btn-primary">
+            <input type="submit" value="Guardar" class="btn btn2 btn-primary">
         </form>
     </div>
 </div>

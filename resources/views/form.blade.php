@@ -83,7 +83,7 @@
             <strong>{{ $message }}</strong>
         </span>
         @enderror
-          <input type="submit" value="Subir oferta" class="btn btn-primary">
+          <input type="submit" value="Subir oferta" class="btn btn2 btn-primary">
           <span style="padding-top: 10px; visibility: hidden;">¿Todavía no te has registrado? ¡Registrate!</span>
         </form>
       </div>

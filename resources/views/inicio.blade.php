@@ -5,19 +5,54 @@
     <div class="card-header h1 text-light">
         Bienvenido/a {{ Auth::user()->name }}
     </div>
+
     <div class="card-body">
         <div class="d-flex justify-content-around">
-            <div>
-                <p class="card-text text-start text-light">Busco ofertas de...</p>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <div>
-                <p class="card-text text-start text-light">En...</p>
-                <input type="text" list="cities" name="cities" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                <datalist id="cities"></datalist>
-            </div>
+            <form method="GET" action="{{ url('/')}}" class="form-inline">
+                <div>
+                    <p class="card-text text-start text-light">Busco ofertas del ciclo de...</p>
+                    <select id="course" class="form-select @error('course') is-invalid @enderror" aria-label="Default select example" name="searchCourse" required autocomplete="course" autofocus>
+                        <option value="BAT" {{ $filters['searchCourse'] == 'BAT' ? 'selected' : '' }}>Bachillerato</option>
+                        <optgroup label="SSCC">
+                            <option value="APSD" {{ $filters['searchCourse'] == 'APSD' ? 'selected' : '' }}>CFGM Atención a Personas en Situación de Dependencia</option>
+                            <option value="AST" {{ $filters['searchCourse'] == 'AST' ? 'selected' : '' }}>CFGS Animación Sociocultural y Turística</option>
+                            <option value="EI" {{ $filters['searchCourse'] == 'EI' ? 'selected' : '' }}>CFGS Educación Infantil</option>
+                            <option value="IS" {{ $filters['searchCourse'] == 'IS' ? 'selected' : '' }}>CFGS Integración Social</option>
+                        </optgroup>
+                        <optgroup label="COM" {{ $filters['searchCourse'] == 'COM' ? 'selected' : '' }}>
+                            <option value="AC" {{ $filters['searchCourse'] == 'AC' ? 'selected' : '' }}>CFGM Actividades Comerciales</option>
+                            <option value="CI" {{ $filters['searchCourse'] == 'CI' ? 'selected' : '' }}>CFGS Comercio Internacional</option>
+                            <option value="GVEC" {{ $filters['searchCourse'] == 'GVEC' ? 'selected' : '' }}>CFGS Gestión de Ventas y Espacios Comerciales</option>
+                            <option value="MP" {{ $filters['searchCourse'] == 'MP' ? 'selected' : '' }}>CFGS Marqueting y Publicidad</option>
+                            <option value="TL" {{ $filters['searchCourse'] == 'TL' ? 'selected' : '' }}>CFGS Transporte y Logística</option>
+                        </optgroup>
+                        <optgroup label="INFO">
+                            <option value="SMX" {{ $filters['searchCourse'] == 'SMX' ? 'selected' : '' }}>CFGM Sistemas Microinformáticos y Redes</option>
+                            <option value="ASIX" {{ $filters['searchCourse'] == 'ASIX' ? 'selected' : '' }}>CFGS Administración de Sistemas Informáticos en la Red, Perfil Profesional Ciberseguridad</option>
+                            <option value="DAM" {{ $filters['searchCourse'] == 'DAM' ? 'selected' : '' }}>CFGS Desarrollo de Aplicaciones Multiplataforma</option>
+                            <option value="DAW" {{ $filters['searchCourse'] == 'DAW' ? 'selected' : '' }}>CFGS Desarrollo de Aplicaciones Web</option>
+                            <option value="ECET" {{ $filters['searchCourse'] == 'ECET' ? 'selected' : '' }}>Curso de Especialización en Ciberseguridad en Entornos de las Tecnologías de la Información</option>
+                        </optgroup>
+                        <optgroup label="ADMIN">
+                            <option value="GA" {{ $filters['searchCourse'] == 'GA' ? 'selected' : '' }}>CFGM Gestión Administrativa</option>
+                            <option value="GAJ" {{ $filters['searchCourse'] == 'GAJ' ? 'selected' : '' }}>CFGM Gestión Administrativa (Ámbito Jurídico)</option>
+                            <option value="AF" {{ $filters['searchCourse'] == 'AF' ? 'selected' : '' }}>CFGS Administración y Finanzas</option>
+                            <option value="AD" {{ $filters['searchCourse'] == 'AD' ? 'selected' : '' }}>CFGS Asistencia a la Dirección</option>
+                        </optgroup>
+                    </select>
+                    <!-- <input type="search" name="searchCourse" value="{{ $filters['searchCourse'] }}" placeholder="Ej: DAW" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"> -->
+                </div>
+                <div>
+                    <p class="card-text text-start text-light">En...</p>
+                     
+                    <input type="search" list="cities" name="searchLocation" value="{{ $filters['searchLocation'] }}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <datalist id="cities"></datalist>
+                </div>
+                <br>
+                <input type="submit" value="Buscar" class="btn btn2 btn-success">
+            </form>
         </div>
-        <a href="#" class="btn btn-success">Buscar</a>
+        <!-- <a href="#" class="btn btn-success">Buscar</a> -->
 
     </div>
 </div>
@@ -36,13 +71,15 @@
             <div class="card-body">
                 <form method="POST" action="{{ url('/'.$user.'/enrol/'.$oferta->id) }}">
                     @csrf
-                <h4 class="card-title ms-2 mt-2">{{ $oferta->name }} ({{$oferta->course}})</h4>
-                <h5 class="card-subtitle mb-2 ms-2 text-light">{{ $oferta->location }}</h5>
-                <p class="mb-2 ms-2"><b>Tipo de contrato:</b> {{ $oferta->contract }} </p>
-                <p class="mb-2 ms-2"><b>Descripción: </b> {{ $oferta->description }}</p>
-                <p class="mb-2 ms-2"><b>Requisitos: </b>{{ $oferta->requeriments }}</p>
-                <input type="submit" class="btn btn-success" value="Inscribirse">
-                <!-- <a href="#" class="btn btn-success">Inscribirse</a> -->
+                    <h4 class="card-title ms-2 mt-2">{{ $oferta->name }} ({{$oferta->course}})</h4>
+                    <h5 class="card-subtitle mb-2 ms-2 text-light">{{ $oferta->location }}</h5>
+                    <p class="mb-2 ms-2"><b>Tipo de contrato:</b> {{ $oferta->contract }} </p>
+                    <p class="mb-2 ms-2"><b>Descripción: </b> {{ $oferta->description }}</p>
+                    <p class="mb-2 ms-2"><b>Requisitos: </b>{{ $oferta->requeriments }}</p>
+                    @if(Auth::user()->is_admin)   
+                    <input type="submit" class="btn btn2 btn-success" value="Inscribirse">
+                    @endif
+                    <!-- <a href="#" class="btn btn-success">Inscribirse</a> -->
                 </form>
             </div>
     </li>
@@ -62,4 +99,7 @@
 
     document.getElementById('cities').innerHTML = options;
 </script>
+
+
+{{ $ofertas->links('vendor.pagination.pagin') }}
 @endsection

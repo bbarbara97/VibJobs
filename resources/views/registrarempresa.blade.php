@@ -90,14 +90,6 @@
           </span>
           @enderror
 
-          <p>País/Región</p>
-          <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus> <br>
-
-          @error('country')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-          @enderror
 
           <p>Código postal</p>
           <input id="cp" type="text" class="form-control @error('cp') is-invalid @enderror" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="cp" value="{{ old('cp') }}" required autocomplete="cp" autofocus> <br>
@@ -123,7 +115,7 @@
           <p>Descripción de la empresa</p>
             <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Descripción" id="description" name="description" value="{{ old('description') }}" required autocomplete="description" autofocus></textarea>
           <br>
-          <input type="submit" value="Registrate!" class="btn btn-primary">
+          <input type="submit" value="Registrate!" class="btn btn2 btn-primary">
           <!-- <a href="#" class="btn btn-primary">Conectate!</a> <br> -->
           <span style="padding-top: 10px; visibility: hidden;">¿Todavía no te has registrado? ¡Registrate!</span>
         </form>

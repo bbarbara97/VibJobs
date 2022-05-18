@@ -5,28 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Oferta extends Model
+class Dato extends Model
 {
     use HasFactory;
 
+    protected $table = 'datos';
 
     protected $fillable = [
-        'name',
-        'location',
-        'contract',
-        'course',
-        'requeriments',
-        'description',
+        'license',
+        'vehicle',
+        'nationality',
+        'work_permit',
+        'autonomous',
         'user_id'
     ];
 
     public function User(){
-
-        return $this->belongsToMany(
-            User::class,
-        'oferta_user');
-    }
-    public function UserB(){
         return $this->belongsTo(
             User::class,
         'id','user_id');

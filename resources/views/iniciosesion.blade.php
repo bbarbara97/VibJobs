@@ -49,7 +49,7 @@
           <p> Contraseña (6 o más carácteres)</p><input type="password" class="form-control" aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-sm">
           <br>
-          <a href="#" class="btn btn-primary">Conectate!</a> <br>
+          <a href="#" class="btn btn2 btn-primary">Conectate!</a> <br>
           <span style="padding-top: 10px; visibility: hidden;">¿Todavía no te has registrado? ¡Registrate!</span>
       </form>
     </div>

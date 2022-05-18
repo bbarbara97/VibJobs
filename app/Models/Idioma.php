@@ -5,28 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Oferta extends Model
+class Idioma extends Model
 {
     use HasFactory;
 
+    protected $table = 'idiomas';
 
     protected $fillable = [
         'name',
-        'location',
-        'contract',
-        'course',
-        'requeriments',
-        'description',
+        'level',
         'user_id'
     ];
 
     public function User(){
-
-        return $this->belongsToMany(
-            User::class,
-        'oferta_user');
-    }
-    public function UserB(){
         return $this->belongsTo(
             User::class,
         'id','user_id');

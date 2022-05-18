@@ -11,7 +11,7 @@
         <form method="POST" action="{{ url('chemail/update') }}">
             @csrf
             <p>Nuevo e-mail:</p> <input type="email" name="email" id="email" class="w-75"> <br> <br>
-            <input type="submit" value="Guardar" class="btn btn-primary">
+            <input type="submit" value="Guardar" class="btn btn2 btn-primary">
         </form>
     </div>
 </div>

@@ -48,9 +48,8 @@ class User extends Authenticatable
 
     public function getIsAdminAttribute()
     {
-        // role_id = 0, normal
         // role_id = 1, empresa
-        // role_id = 2, Admin
+        // role_id = 2, estudiante
         return $this->role_id == 2;
     }
     public function getIsBusinessAttribute()
@@ -73,5 +72,30 @@ class User extends Authenticatable
         return $this->belongsToMany(
             Oferta::class,
         'oferta_user');
+    }
+
+    public function experiencia()
+    {
+        return $this->hasMany(Experiencia::class, 'user_id','id');
+    }
+
+    public function estudios()
+    {
+        return $this->hasMany(Estudio::class, 'user_id','id');
+    }
+
+    public function idiomas()
+    {
+        return $this->hasMany(Idioma::class, 'user_id','id');
+    }
+
+    public function datos()
+    {
+        return $this->hasMany(Dato::class, 'user_id','id');
+    }
+
+    public function ofertasB()
+    {
+        return $this->hasMany(Oferta::class, 'user_id','id');
     }
 }

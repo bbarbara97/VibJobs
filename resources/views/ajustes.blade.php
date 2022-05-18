@@ -47,14 +47,14 @@
         <div class="card text-justify w-75 mx-auto mt-5 shadow">
             <div class="card-body">
                 <a class="pinch" onclick="mostrar()">
-                    <h6 class="card-subtitle mb-2 ms-2 text-light punch"><i class="bi bi-exclamation-triangle"></i> Darme de baja</h6>
+                    <h6 class="card-subtitle mb-2 ms-2 text-light punch" style="cursor: pointer;"><i class="bi bi-exclamation-triangle"></i> Darme de baja</h6>
                 </a>
             </div>
         </div>
 
         <div class="card text-justify mx-auto mt-5 pb-4 shadow" id="darBaja" style="position: fixed;top: 35%;left: 35%;width: 30%;display:none">
             <h6 class="card-subtitle my-2 ms-2 text-light text-center"> ¿Estás seguro que quieres darte de baja?</h6>
-            <label class="ms-5 mt-2 w-75"> <a href="/delete/{{$user}}" class="btn btn-primary ms-5 w-30">Sí</a><input type="button" value="No" onclick="mostrar()" class="btn btn-primary w-30 ms-2"></label>
+            <label class="ms-5 mt-2 w-75"> <a href="/delete/{{$user}}" class="btn btn2 btn-primary ms-5 w-30">Sí</a><input type="button" value="No" onclick="mostrar()" class="btn btn2 btn-primary w-30 ms-2"></label>
         </div>
     </li>
 </ul>

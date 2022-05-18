@@ -77,7 +77,7 @@
 
                     <div class="row mb-0">
 
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn2 btn-primary">
                             Conectate!
                         </button>
                         @if (Route::has('password.request'))

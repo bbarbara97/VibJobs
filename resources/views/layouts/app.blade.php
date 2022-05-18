@@ -46,21 +46,22 @@
                         <li class="nav-item mx-3 me-1">
                             <a class="nav-link text-light lh-lg" href="{{ url('/') }}">Empleos</a>
                         </li>
+                        @if(Auth::user()->is_admin)
                         <li class="nav-item">
-                            <a class="nav-link text-light lh-lg" href="{{ url('ofertas/'.$user) }}">Mis Ofertas</a>
+                            <a class="nav-link text-light lh-lg" href="{{ url('ofertas/'.$idU) }}">Mis Ofertas</a>
                         </li>
-
+                        @endif
 
                         @if(Auth::user()->is_business)
                         <li class="nav-item">
-                            <a class="nav-link text-light lh-lg" href="form">Crear Oferta</a>
+                            <a class="nav-link text-light lh-lg" href="{{url('form')}}">Crear Oferta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light lh-lg" href="{{ url('ofertasE/'.$idU) }}">Mis Ofertas</a>
                         </li>
                         @endif
                         <li class="nav-item">
                             <a class="nav-link text-light lh-lg disabled" href="mensajes">Mensajes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light lh-lg disabled" href="#">Notificaciones</a>
                         </li>
                     </ul>
 
@@ -82,14 +83,16 @@
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="../img/yo.jpg" width="40px" height="40px" class="rounded-circle">
+                                <img src="../img/yo.png" width="40px" height="40px" class="rounded-circle">
                             </a>
 
 
                             <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ url('miperfil') }}">Mi perfil</a></li>
+                                @if(Auth::user()->is_admin)
+                                <li><a class="dropdown-item" href="{{ url('miperfil/'.$idU) }}">Mi perfil</a></li>
+                                @endif
                                 <li><a class="dropdown-item" href="{{ url('ajustes') }}">Ajustes</a></li>
-                                <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                                <li><a class="dropdown-item" href="{{ url('ayuda') }}">Ayuda</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -123,7 +126,7 @@
                 <div class="col-3">
                     <h5><b>Nosotros</b></h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ayuda</a></li>
+                        <li class="nav-item mb-2"><a href="{{ url('ayuda')}}" class="nav-link p-0 text-muted">Ayuda</a></li>
                         <li class="nav-item mb-2"><a href="{{ url('legal') }}" class="nav-link p-0 text-muted">Condiciones legales</a></li>
                         <li class="nav-item mb-2"><a href="{{ url('privacidad') }}" class="nav-link p-0 text-muted">Política de Privacidad</a></li>
                         <li class="nav-item mb-2"><a href="{{ url('legal#legalcookies') }}" class="nav-link p-0 text-muted">Política de cookies</a></li>
@@ -135,7 +138,6 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="{{ url('/') }}" class="nav-link p-0 text-muted">Ofertas de empleo</a></li>
                         <li class="nav-item mb-2"><a href="{{ url('ajustes') }}" class="nav-link p-0 text-muted">Ajustes</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
                     </ul>
                 </div>
 
@@ -147,7 +149,7 @@
                         <div class="d-flex w-100 gap-2">
                             <label for="newsletter1" class="visually-hidden">Correo electrónico</label>
                             <input id="newsletter1" type="text" class="form-control" placeholder="Correo electrónico">
-                            <button class="btn btn-primary" type="button">Suscribete</button>
+                            <button class="btn btn2 btn-primary" type="button">Suscribete</button>
                         </div>
                     </form>
                 </div>
